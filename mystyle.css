@@ -1,12 +1,9 @@
 body {
   background-color: white;
+      display: block;
 }
 
-h1 {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  color: white;
-  text-align: center;
-}
+
 ul {
 	  font-family: "Comic Sans MS", cursive, sans-serif;
   list-style-type: none;
@@ -17,4 +14,30 @@ ul {
 p {
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 20px;
+}
+.tablink {
+  font-family:courier,arial,helvetica;
+  font-weight: bold;
+  background-color: #777;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 17px 16px;
+  font-size: 17px;
+  width: 25%;
+    display: block;
+}
+.tablink:hover {
+  background-color: #999;
+    display: block;
+}
+.headerthing {
+
+  padding: 16px 38.9%;
+  background-color: #555;
+  border: none;
+  outline: none;
+    display: block;
 }
