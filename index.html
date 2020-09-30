@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<body>
 <link rel="stylesheet" href="mystyle.css">
-<h1> <img class="headerthing" src="cbnnpng.png" alt="logo" width="300" height="60">
+<body>
+<h1 class="header" id="header1" <img class="headerthing" src="cbnnpng.png" alt="logo" width="300" height="60">
 <button class="tablink" onclick="">Home</button>
 <button class="tablink" onclick="">Latest</button>
 <button class="tablink" onclick="">Formula One</button>
@@ -11,4 +11,19 @@
 
 <p>"The World's Least reliable News Scource" - JBG.</p>
 </body>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("header1");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
 </html>
