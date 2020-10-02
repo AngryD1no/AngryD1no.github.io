@@ -10,6 +10,35 @@
 <button class="tablink" onclick="">The JBG Collum</button>
 </h1>
 
-<p>"The World's Least reliable News Scource" - JBG.</p>
+<p id="demo">Next Up: </p>
+<img id="trackmap" src="cbnnpng.png" alt="logo" width="884" height="497">
+<script>
+var Germany = {name:"Formula 1 Aramco Grosser Preis Der Eifel 2020", day:316, adress:"53520", time:0, image:"ger"};
+var Russia = {name:"Formula 1 VTB Russian Grand Prix 2020", day:210, adress:"Sochi, Krasnodar Krai‎, Russia", time:0, image:"rus"};
+var currentrace;
+var Races = new Array(Germany, Russia);
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = dd + '/' + mm + '/' + yyyy;
+
+
+var day = 0;
+day = parseInt(dd, 10) + (parseInt(mm, 10) * 30.5);
+document.getElementById("demo").innerHTML = day;
+var count = 0;
+while (count < Races.length) {
+	if (Races[count].day > day) {
+		document.getElementById("demo").innerHTML = "Next Up: " + Races[count].name;
+
+		currentrace = Races[count];
+		document.getElementById("trackmap").src = currentrace.image + ".png";
+	}
+
+count +=1
+}
+</script>
 </body>
 </html>
