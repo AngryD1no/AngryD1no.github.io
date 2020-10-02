@@ -49,14 +49,14 @@ class car {
 
 
       //this.input[5] = (this.score % track1.checkpoints.length)/track1.checkpoints.length;
-      //this.input[6] = map(this.vel,-4,4,0,1);
+      this.input[5] = map(this.vel,-4,4,0,1);
 
       this.output = this.brain.feedforward(this.input);
-      this.acc = map(this.output[0],0,1,-0.05,0.1);
+      this.acc = map(this.output[0],0,1,-0.15,0.2);
       this.steering = map(this.output[1],0,1,-0.5,0.5)
 
       if (this.steering != 0) {
-        this.turning_radius = this.length / tan(this.steering);
+        this.turning_radius = this.length / tan(this.steering)+10*this.vel;
         this.angular_velocity = this.vel / this.turning_radius;
       }else {
         this.angular_velocity = 0;
@@ -64,10 +64,13 @@ class car {
 
 
       this.vel += this.acc;
-      this.vel *= 0.99;
-      if (abs(this.vel) > 4) {
-        this.vel = 4;
-      }
+      this.vel *= 0.97;
+      if (this.vel > 8) {
+        this.vel = 8;
+      }else if (this.vel < -8) {
+		  this.vel = -8
+	  }
+	  
       this.new_pos = p5.Vector.add(p5.Vector.fromAngle(this.angle,this.vel),this.pos);
       this.pos = this.new_pos;
 
