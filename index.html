@@ -13,12 +13,19 @@
 <button class="tablink" onclick="window.location.href='JBG Section/jbgindex.html';">The JBG Collum</button>
 </h1>
 <label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
+  <input type="checkbox", onclick = "initate">
+  <span class="slider"></span>
 </label>
 <p id="demo">Next Up: </p>
 <img id="trackmap" src="cbnnpng.png" alt="logo" width="884" height="497">
 <script>
+function darkMode(){
+	document.getElementById("pagestyle").setAttribute("href", sheet); 
+}
+function initate() {
+    var style2 = document.getElementById("stylesheet2");
+    style2.onclick = swapStyleSheet("dark.css");
+	
 var Germany = {name:"Formula 1 Aramco Grosser Preis Der Eifel 2020", day:316, adress:"53520", time:0, image:"ger"};
 var Russia = {name:"Formula 1 VTB Russian Grand Prix 2020", day:210, adress:"Sochi, Krasnodar Krai‎, Russia", time:0, image:"rus"};
 var currentrace;
