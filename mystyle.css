@@ -42,3 +42,11 @@ p {
   outline: none;
     display: block;
 }
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+}
