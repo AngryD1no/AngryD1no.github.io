@@ -4,11 +4,11 @@ let track1;
 let img;
 let canvas;
 let store = false;
-let pop_len = 600;
+let pop_len = 1500;
 let Population;
 let stage;
 let inside;
-let brain_shape = [6,7,7,2];
+let brain_shape = [6,7,2];
 let outside;
 let save_button;
 let show_button;
@@ -149,7 +149,7 @@ function changeShow(){
 function startDriving() {
   if (stage == 2) {
     direction = -PI/2;
-    Population = new population(100,startpos,direction,0.1,init_brain);
+    Population = new population(250,startpos,direction,0.1,init_brain);
     stage = 3;
   }
 }

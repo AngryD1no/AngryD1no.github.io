@@ -39,7 +39,7 @@ class car {
       }
 
 
-      for (var i = 0; i < this.input.length-2; i++) {
+      for (var i = 0; i < this.input.length-1; i++) {
         if(this.input[i] < this.vel || this.input[i] < this.width){
           this.driving = false;
         }
@@ -53,18 +53,23 @@ class car {
 
       this.output = this.brain.feedforward(this.input);
       this.acc = map(this.output[0],0,1,-0.15,0.2);
-      this.steering = map(this.output[1],0,1,-0.5,0.5)
+      this.steering = map(this.output[1],0,1,-1,1)
 
       if (this.steering != 0) {
-        this.turning_radius = this.length / tan(this.steering)+10*this.vel;
+        this.turning_radius = (this.length / tan(this.steering));
         this.angular_velocity = this.vel / this.turning_radius;
+		if (this.angular_velocity > 0.025) {
+			this.angular_velocity = 0.025;
+		}else if (this.angular_velocity < -0.025) {
+			this.angular_velocity = -0.025;
+		}
       }else {
         this.angular_velocity = 0;
       }
 
 
       this.vel += this.acc;
-      this.vel *= 0.97;
+      this.vel *= 0.99;
       if (this.vel > 8) {
         this.vel = 8;
       }else if (this.vel < -8) {
