@@ -1,0 +1,26 @@
+a {
+    color: cyan;
+}
+body {
+    background-color: black;
+    color: white;
+}
+p {
+    font-family: font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+}
+div {
+   width:80vw;
+   height:80vh;
+}
+img {
+   max-width:800px;
+   max-height:600px;
+}
+figure {
+    text-align: center;
+}
+figure figcaption {
+    text-align: center;
+    font-style: italic;
+}
